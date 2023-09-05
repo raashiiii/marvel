@@ -1,0 +1,68 @@
+body {
+    background-image: url("https://wallpapercave.com/wp/wp10910840.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  h1{
+    color: whitesmoke;
+    background-color: red;
+    size: 100%;
+    margin-left: 1.6%;
+    margin-top: 5%;
+    text-align: center;
+    width: 1255px;
+    border-collapse: collapse;
+    margin-bottom: -1.5%;
+  }
+  .container {
+      color: rgb(0, 0, 0);
+      display: flex;
+      border-collapse: collapse;
+      margin: 20px;
+  }
+  .section {
+    flex: 1;
+    margin: 0px;
+    padding: 10px;
+    background-color:rgba(112, 101, 101, 0.596);
+    border-collapse: collapse;
+
+  }
+  .section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(247, 247, 247);
+    text-align: center;
+  }
+  .character {
+    text-align: center;
+    font-family: monospace;
+    color: white;
+    display: inline-block;
+    
+  }
+  .character img {
+    width: 70px;
+    height: 70px;
+  }
+  .hero-name, .villain-name {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.973);
+    padding: 1%;
+    margin: 6%;
+  }
+  .row {
+    text-align: left;
+  }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .row .character {
+    width: calc(33.33% - 20px);
+    float: left;
+  }

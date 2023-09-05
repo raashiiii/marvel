@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DC Heroes and Villains</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>THE MARVEL UNIVERSE</h1>
+    <div class="container">
+        <div class="section">
+            <h2 >POPULAR SUPER HEROES</h2>
+            <div id="heroesTable" class="row">
+        </div>
+    </div>
+    <div class="section">
+      <h2>POPULAR SUPER VILLAINS</h2>
+      <div id="villainsTable" class="row">
+      </div>
+    </div>
+    <script>
+    const charactersData = [
+      { name: "IRON MAN", image: "https://is5-ssl.mzstatic.com/image/thumb/toO8_a7YKPIpfUgyJ7MnYg/1200x675mf.jpg", alignment: "Hero" },
+      { name: "THOR", image: "https://www.koimoi.com/wp-content/new-galleries/2020/04/thor-love-and-thunder-chris-hemsworth-starrer-to-bring-back-this-dead-character-its-not-loki-1.jpg", alignment: "Hero" },
+      { name: "CAPTAIN AMERICA", image: "https://cdn.wallpapersafari.com/31/29/13sNzP.jpg", alignment: "Hero" },
+      { name: "HULK", image: "https://hips.hearstapps.com/hmg-prod/images/hulk-avengers-age-of-ultron-1550250955.jpeg?crop=0.628xw:1.00xh;0.0391xw,0&resize=1200:*", alignment: "Hero" },
+      { name: "BLACK PANTHER", image: "https://miro.medium.com/v2/resize:fit:768/1*hQASxxkBJv6AZeeh8bYifQ.jpeg", alignment: "Hero" },
+      { name: "SPIDER MAN", image: "https://justfunfacts.com/wp-content/uploads/2022/03/spider-man-1.jpg", alignment: "Hero" },
+      { name: "BLACK WIDOW", image: "https://global.dafunda.com/wp-content/uploads/2022/11/Fakta-Menarik-Black-Widow-Agen-Rahasia-Anggota-Avengers.jpg", alignment: "Hero" },
+      { name: "ANT MAN", image: "https://wallpaperaccess.com/full/1101778.jpg", alignment: "Hero" },
+      { name: "LOKI", image: "https://wallpapers.com/images/featured/loki-r8n0aakjzmbb3lcg.jpg", alignment: "Villain" },
+      { name: "RED SKULL", image: "https://www.thewrap.com/wp-content/uploads/2016/10/red-skull.jpg", alignment: "Villain" },
+      { name: "THANOS", image: "https://images.hdqwalls.com/wallpapers/thanos-snap-4k-j2.jpg", alignment: "Villain" },
+      { name: "ULTRON", image: "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2022/06/24/avengers-age-of-ultron-marvel-cinematic-universe-e1669893502144.jpg", alignment: "Villain" },
+      { name: "GREEN GOBLIN", image: "https://images.immediate.co.uk/production/volatile/sites/3/2022/05/Green-Goblin-3664432.jpg?quality=90&resize=800,534", alignment: "Villain" },
+      { name: "MYSTERIO", image: "https://images7.alphacoders.com/116/1160713.jpg", alignment: "Villain" },
+      { name: "DOCTOR OCTOPUS", image: "https://c4.wallpaperflare.com/wallpaper/617/541/91/doctor-octopus-wallpaper-preview.jpg", alignment: "Villain" }
+    ];
+
+    function createCharacterCard(character, containerId) {
+      const container = document.getElementById(containerId);
+
+      const characterDiv = document.createElement("div");
+      characterDiv.classList.add("character");
+
+      const characterImage = document.createElement("img");
+      characterImage.src = character.image;
+      characterImage.classList.add(character.alignment.toLowerCase() + '-img');
+
+      const characterName = document.createElement("div");
+      characterName.classList.add(character.alignment.toLowerCase() + '-name');
+      characterName.textContent = character.name;
+
+      characterDiv.appendChild(characterImage);
+      characterDiv.appendChild(characterName);
+
+      container.appendChild(characterDiv);
+    }
+    const heroesTable = document.getElementById("heroesTable");
+    const villainsTable = document.getElementById("villainsTable");
+
+    charactersData.forEach(character => {
+      const containerId = character.alignment === "Hero" ? "heroesTable" : "villainsTable";
+      createCharacterCard(character, containerId);
+    });
+  </script>
+</body>
+</html>
